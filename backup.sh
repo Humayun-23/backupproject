@@ -52,4 +52,4 @@ done
 
 tar -czvf "$backupFileName" "${toBackup[@]}"
 
-mv "$backupFileName" "$destAbsPath"
+mv "$backupFileName" "$destDirAbsPath"
