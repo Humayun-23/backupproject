@@ -29,12 +29,12 @@ backupFileName="backup-[$currentTS].tar.gz"
 origAbsPath=`pwd`
 
 
-cd $destinationDirectory
+cd "$destinationDirectory"
 destDirAbsPath=`pwd`
 
 
-cd $origAbsPath
-cd $targetDirectory
+cd "$origAbsPath"
+cd "$targetDirectory"
 
 yesterdayTS=$(($currentTS - 24 * 60 * 60))
 
@@ -50,6 +50,6 @@ toBackup+=($file)
 done
 
 
-tar -czvf $backupFileName ${toBackup[@]}
+tar -czvf "$backupFileName" "${toBackup[@]}"
 
-mv $backupFileName $destAbsPath
+mv "$backupFileName" "$destAbsPath"
